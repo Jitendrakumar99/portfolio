@@ -30,9 +30,9 @@ const projects = [
     liveLink: "https://jitendrakumar99.github.io/Netflix/",
   },
   {
-    title: "Project 1",
+    title: "Blood Donation",
     description:
-      "Description of your first project. What problem does it solve? What technologies did you use?",
+      "A responsive Blood Donation website with secure donor registration, real-time database, smooth animations, and a user-friendly UI to connect donors with those in need.",
     images: ["image.png","blood.png"],
     technologies: [
       "React",
