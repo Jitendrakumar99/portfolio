@@ -1,0 +1,346 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { FaRobot, FaTimes, FaChevronUp, FaPaperPlane } from 'react-icons/fa';
+
+const certifications = [
+  {
+    title: "React - The Complete Guide",
+    issuer: "Udemy",
+    date: "2023",
+    skills: ["React", "Redux", "React Hooks", "Context API"],
+  },
+  {
+    title: "Full Stack Web Development",
+    issuer: "FreeCodeCamp",
+    date: "2023",
+    skills: ["JavaScript", "Node.js", "MongoDB", "Express"],
+  },
+  {
+    title: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2023",
+    skills: ["AWS", "Cloud Computing", "DevOps"],
+  },
+];
+
+const personalInfo = {
+  name: "Jitendra Kumar",
+  role: "Full Stack Developer",
+  location: "andhra pradesh",
+  skills: {
+    frontend: [
+      { name: 'HTML5', proficiency: 90 },
+      { name: 'CSS3', proficiency: 85 },
+      { name: 'JavaScript', proficiency: 88 },
+      { name: 'React', proficiency: 85 },
+      { name: 'Tailwind CSS', proficiency: 80 },
+      { name: 'Bootstrap', proficiency: 85 }
+    ],
+    backend: [
+      { name: 'Node.js', proficiency: 80 },
+      { name: 'Express.js', proficiency: 75 },
+      { name: 'MongoDB', proficiency: 75 },
+      { name: 'MySQL', proficiency: 70 }
+    ],
+    tools: [
+      { name: 'Git', proficiency: 85 },
+      { name: 'Docker', proficiency: 70 },
+      { name: 'VS Code', proficiency: 90 },
+      { name: 'Postman', proficiency: 85 }
+    ],
+    other: [
+      { name: 'Problem Solving', proficiency: 85 },
+      { name: 'Team Collaboration', proficiency: 90 },
+      { name: 'Agile Methodology', proficiency: 80 },
+      { name: 'RESTful APIs', proficiency: 85 }
+    ]
+  },
+  hobbies: [
+    "Coding and learning new technologies",
+    "Reading tech blogs",
+    "Playing chess",
+    "Listening to music",
+    "Problem-solving"
+  ],
+  goals: {
+    shortTerm: [
+      "Master advanced React concepts and patterns",
+      "Build a comprehensive portfolio of full-stack projects",
+      "Contribute to open-source projects",
+      "Improve problem-solving skills through competitive programming"
+    ],
+    longTerm: [
+      "Become a Senior Full Stack Developer",
+      "Start a tech startup",
+      "Create innovative solutions that impact people's lives",
+      "Mentor aspiring developers"
+    ]
+  },
+  futurePlans: [
+    "Pursue Masters in Computer Science",
+    "Specialize in AI and Machine Learning",
+    "Work with cutting-edge technologies",
+    "Build scalable applications that solve real-world problems"
+  ],
+  strengths: [
+    "Quick learner and adaptable",
+    "Strong problem-solving skills",
+    "Good team player with excellent communication",
+    "Passionate about coding and technology",
+    "Detail-oriented and organized"
+  ],
+  weaknesses: [
+    "Sometimes perfectionist which can slow down delivery",
+    "Need to improve work-life balance",
+    "Can be too focused on technical details",
+    "Working on time management skills"
+  ],
+  education: {
+    degree: "Bachelor of Technology",
+    major: "Computer Science",
+    university: "Your University Name",
+    year: "2023",
+    achievements: [
+      "Top performer in programming contests",
+      "Led technical club activities",
+      "Developed college project management system"
+    ]
+  }
+};
+
+const Chatbot = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    { text: "👋 Hi! I'm your portfolio assistant. Ask me anything about Jitendra!", type: 'bot' }
+  ]);
+  const [inputMessage, setInputMessage] = useState('');
+  const [isMinimized, setIsMinimized] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (!inputMessage.trim()) return;
+
+    setMessages(prev => [...prev, { text: inputMessage, type: 'user' }]);
+
+    setTimeout(() => {
+      let response = getBotResponse(inputMessage.toLowerCase());
+      setMessages(prev => [...prev, { text: response, type: 'bot' }]);
+    }, 500);
+
+    setInputMessage('');
+  };
+
+  const formatSkillCategory = (category, skills) => {
+    return `${category}:
+${skills.map(skill => `• ${skill.name} (${skill.proficiency}%)`).join('\n')}`;
+  };
+
+  const getBotResponse = (input) => {
+    // Name and basic info
+    if (input.includes('name') || input.includes('who')) {
+      return `Hi! I'm ${personalInfo.name}, a ${personalInfo.role} based in ${personalInfo.location}.`;
+    }
+
+    // Detailed skills query
+    if (input.includes('skill') || input.includes('tech') || input.includes('technologies')) {
+      if (input.includes('front') || input.includes('ui')) {
+        return formatSkillCategory('Frontend Skills', personalInfo.skills.frontend);
+      }
+      if (input.includes('back') || input.includes('server')) {
+        return formatSkillCategory('Backend Skills', personalInfo.skills.backend);
+      }
+      if (input.includes('tool')) {
+        return formatSkillCategory('Development Tools', personalInfo.skills.tools);
+      }
+      if (input.includes('other') || input.includes('soft')) {
+        return formatSkillCategory('Other Skills', personalInfo.skills.other);
+      }
+      
+      // Show all skills if no specific category is mentioned
+      return `My Skills Overview:
+
+${formatSkillCategory('Frontend Development', personalInfo.skills.frontend)}
+
+${formatSkillCategory('Backend Development', personalInfo.skills.backend)}
+
+${formatSkillCategory('Development Tools', personalInfo.skills.tools)}
+
+${formatSkillCategory('Other Skills', personalInfo.skills.other)}`;
+    }
+
+    // Hobbies
+    if (input.includes('hobby') || input.includes('hobbies') || input.includes('interests')) {
+      return `Here are my hobbies:
+${personalInfo.hobbies.map(hobby => `• ${hobby}`).join('\n')}`;
+    }
+
+    // Short-term goals
+    if (input.includes('short term') || input.includes('short-term')) {
+      return `My short-term goals are:
+${personalInfo.goals.shortTerm.map(goal => `🎯 ${goal}`).join('\n')}`;
+    }
+
+    // Long-term goals
+    if (input.includes('long term') || input.includes('long-term')) {
+      return `My long-term goals are:
+${personalInfo.goals.longTerm.map(goal => `🎯 ${goal}`).join('\n')}`;
+    }
+
+    // Future plans
+    if (input.includes('future') || input.includes('plan')) {
+      return `Here are my future plans:
+${personalInfo.futurePlans.map(plan => `🚀 ${plan}`).join('\n')}`;
+    }
+
+    // Strengths
+    if (input.includes('strength') || input.includes('good at')) {
+      return `My strengths include:
+${personalInfo.strengths.map(strength => `💪 ${strength}`).join('\n')}`;
+    }
+
+    // Weaknesses
+    if (input.includes('weakness') || input.includes('improve')) {
+      return `Areas I'm working on improving:
+${personalInfo.weaknesses.map(weakness => `📈 ${weakness}`).join('\n')}`;
+    }
+
+    // Education
+    if (input.includes('education') || input.includes('study') || input.includes('degree')) {
+      return `🎓 Education Background:
+• Degree: ${personalInfo.education.degree}
+• Major: ${personalInfo.education.major}
+• University: ${personalInfo.education.university}
+• Year: ${personalInfo.education.year}
+
+Achievements:
+${personalInfo.education.achievements.map(achievement => `🏆 ${achievement}`).join('\n')}`;
+    }
+
+    // Certification related queries
+    if (input.includes('certification') || input.includes('certificate')) {
+      return `Here are my certifications:
+${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issuer}`).join('\n')}`;
+    }
+
+    // Specific certification queries
+    const specificCert = certifications.find(cert => 
+      input.toLowerCase().includes(cert.title.toLowerCase())
+    );
+    if (specificCert) {
+      return `About ${specificCert.title}:
+📅 Completed: ${specificCert.date}
+🏢 Issuer: ${specificCert.issuer}
+💡 Skills: ${specificCert.skills.join(', ')}`;
+    }
+
+    // Help message
+    if (input.includes('help') || input.includes('what') || input.includes('how')) {
+      return `You can ask me about:
+• Basic info (name, role)
+• Skills (frontend, backend, tools, other)
+• Hobbies and interests
+• Short-term and long-term goals
+• Future plans
+• Strengths and weaknesses
+• Education background
+• Certifications`;
+    }
+
+    // Default response
+    return "Feel free to ask about my skills, hobbies, goals, education, strengths, or type 'help' to see all options!";
+  };
+
+  return (
+    <div className="fixed bottom-4 right-4 z-50">
+      {!isOpen ? (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="bg-primary hover:bg-primary/90 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+        >
+          <FaRobot className="text-2xl" />
+        </button>
+      ) : (
+        <div className="bg-white rounded-lg shadow-2xl w-80 transition-all duration-300">
+          {/* Chat Header */}
+          <div className="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <FaRobot className="text-xl" />
+              <span className="font-medium">Portfolio Assistant</span>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setIsMinimized(!isMinimized)}
+                className="hover:bg-primary-dark/20 p-1 rounded transition-colors"
+              >
+                <FaChevronUp className={`transform transition-transform ${isMinimized ? 'rotate-180' : ''}`} />
+              </button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="hover:bg-primary-dark/20 p-1 rounded transition-colors"
+              >
+                <FaTimes />
+              </button>
+            </div>
+          </div>
+
+          {/* Chat Messages */}
+          {!isMinimized && (
+            <>
+              <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`mb-4 ${
+                      message.type === 'user' ? 'text-right' : 'text-left'
+                    }`}
+                  >
+                    <div
+                      className={`inline-block p-3 rounded-lg max-w-[80%] ${
+                        message.type === 'user'
+                          ? 'bg-primary text-white'
+                          : 'bg-gray-200 text-gray-800'
+                      }`}
+                      style={{ whiteSpace: 'pre-line' }}
+                    >
+                      {message.text}
+                    </div>
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Chat Input */}
+              <form onSubmit={handleSendMessage} className="p-3 border-t bg-white rounded-b-lg">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={inputMessage}
+                    onChange={(e) => setInputMessage(e.target.value)}
+                    placeholder="Ask me anything..."
+                    className="flex-1 p-2 border text-black rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <FaPaperPlane className="text-sm" />
+                  </button>
+                </div>
+              </form>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Chatbot;
