@@ -43,7 +43,7 @@ const projects = [
       "Bootstrap",
       "AWS",
     ],
-    githubLink: "",
+    githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
     liveLink: "http://adityauniversity.in:7006/blooddonation",
   },
 ];

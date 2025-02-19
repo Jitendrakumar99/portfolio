@@ -6,16 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    title: "C Intern",
-    company: "Technical Hub",
-    period: "2025-2026",
-    description: [
-      "Assisting students in understanding C programming concepts, including data structures and algorithms.",
-      "Providing guidance on debugging and optimizing code for efficiency.",
-      "Supporting learners in solving programming challenges and enhancing problem-solving skills."
-    ]
-  },
-  {
     title: "Blood Donation website",
     company: "Technical Hub",
     period: "2025 - 2026",
@@ -25,7 +15,18 @@ const experiences = [
       "Integrated a backend to securely store and manage donor details for efficient record-keeping."
     ]
   },
-  // Add more experiences as needed
+  {
+    title: "C Intern",
+    company: "Technical Hub",
+    period: "2025-2026",
+    description: [
+      "Assisting students in understanding C programming concepts, including data structures and algorithms.",
+      "Providing guidance on debugging and optimizing code for efficiency.",
+      "Supporting learners in solving programming challenges and enhancing problem-solving skills."
+    ]
+  },
+  
+
 ];
 
 const Experience = () => {

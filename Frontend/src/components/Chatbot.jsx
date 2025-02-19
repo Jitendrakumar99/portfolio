@@ -14,12 +14,7 @@ const certifications = [
     date: "2023",
     skills: ["JavaScript", "Node.js", "MongoDB", "Express"],
   },
-  {
-    title: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    skills: ["AWS", "Cloud Computing", "DevOps"],
-  },
+ 
 ];
 
 const personalInfo = {
@@ -43,7 +38,6 @@ const personalInfo = {
     ],
     tools: [
       { name: 'Git', proficiency: 85 },
-      { name: 'Docker', proficiency: 70 },
       { name: 'VS Code', proficiency: 90 },
       { name: 'Postman', proficiency: 85 }
     ],
@@ -57,7 +51,7 @@ const personalInfo = {
   hobbies: [
     "Coding and learning new technologies",
     "Reading tech blogs",
-    "Playing chess",
+    "Playing video game",
     "Listening to music",
     "Problem-solving"
   ],
@@ -97,8 +91,8 @@ const personalInfo = {
   education: {
     degree: "Bachelor of Technology",
     major: "Computer Science",
-    university: "Your University Name",
-    year: "2023",
+    university: "Aditya college of engineering and technology",
+    year: "2022",
     achievements: [
       "Top performer in programming contests",
       "Led technical club activities",
