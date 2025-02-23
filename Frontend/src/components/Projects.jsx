@@ -20,15 +20,7 @@ const projects = [
     githubLink: "https://github.com/Jitendrakumar99/E-commerce",
     liveLink: "https://e-commerce-kappa-five-61.vercel.app/",
   },
-  {
-    title: "Netflix Clone",
-    description:
-      "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
-    images: ["netflix.png","net1.png"],
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
-    githubLink: "https://github.com/Jitendrakumar99/Netflix",
-    liveLink: "https://jitendrakumar99.github.io/Netflix/",
-  },
+  
   {
     title: "Blood Donation",
     description:
@@ -45,6 +37,15 @@ const projects = [
     ],
     githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
     liveLink: "http://adityauniversity.in:7006/blooddonation",
+  },
+  {
+    title: "Netflix Clone",
+    description:
+      "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
+    images: ["netflix.png","net1.png"],
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    githubLink: "https://github.com/Jitendrakumar99/Netflix",
+    liveLink: "https://jitendrakumar99.github.io/Netflix/",
   },
 ];
 
