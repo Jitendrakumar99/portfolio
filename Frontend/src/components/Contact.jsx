@@ -89,15 +89,15 @@ const Contact = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="min-h-screen bg-gray-900 py-12 sm:py-20">
-      <div className="container mx-auto px-3 sm:px-6">
+    <section ref={sectionRef} id="contact" className="min-h-screen  py-12 sm:py-20">
+      <div className="container about mx-auto px-3 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-8 sm:mb-16">Get In Touch</h2>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Info Card */}
             <div 
               ref={el => contactCardsRef.current[0] = el}
-              className="bg-gray-800 rounded-lg p-4 sm:p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
+              className="bg-blue-400/10 bg-opacity-50 rounded-lg p-4 sm:p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
             >
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-8">Contact Information</h3>
               <div className="space-y-4 sm:space-y-6">
@@ -121,13 +121,13 @@ const Contact = () => {
             {/* Contact Form Card */}
             <div 
               ref={el => contactCardsRef.current[1] = el}
-              className="bg-gray-800 rounded-lg p-4 sm:p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
+              className="bg-blue-400/10 bg-opacity-50 rounded-lg p-4 sm:p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
             >
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-8">Send Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 {status.message && (
                   <div className={`p-2 sm:p-3 rounded-md text-sm sm:text-base ${
-                    status.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                    status.type === 'success' ? 'bg-blue-400/10 bg-opacity-50 text-green-500 ' : 'bg-blue-400/10 bg-opacity-50 text-red-700'
                   }`}>
                     {status.message}
                   </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                       id="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
+                      className="w-full bg-blue-400/10  border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
                       placeholder="Your Name"
                       required
                     />
@@ -152,7 +152,7 @@ const Contact = () => {
                       id="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
+                      className="w-full bg-blue-400/10  border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
                       placeholder="your@email.com"
                       required
                     />
@@ -165,7 +165,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows="4"
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none text-base sm:text-lg"
+                    className="w-full bg-blue-400/10  border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none text-base sm:text-lg"
                     placeholder="Your message..."
                     required
                   ></textarea>
@@ -173,7 +173,7 @@ const Contact = () => {
                 <button 
                   type="submit" 
                   disabled={loading}
-                  className="w-full bg-blue-600 text-white py-2 sm:py-3 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-400 text-base sm:text-lg"
+                  className="w-full bg-blue-400/10 text-white py-2 sm:py-3 px-4 rounded-md hover:bg-blue-400/20 transition-colors disabled:bg-blue-400/40 text-base sm:text-lg"
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>

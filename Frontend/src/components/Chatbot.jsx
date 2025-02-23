@@ -300,14 +300,14 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-primary hover:bg-primary/90 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+          className="bg-blue-400/20   hover:bg-primary/90 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
         >
           <FaRobot className="text-2xl" />
         </button>
       ) : (
         <div className="bg-white rounded-lg shadow-2xl w-80 transition-all duration-300">
           {/* Chat Header */}
-          <div className="bg-blue-950 text-white p-3 rounded-t-lg flex justify-between items-center">
+          <div className="bg-[#110031] bg-opacity-80 text-white p-3 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2">
               <FaRobot className="text-xl" />
               <span className="font-medium">Portfolio Assistant</span>
@@ -331,7 +331,7 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
           {/* Chat Messages */}
           {!isMinimized && (
             <>
-              <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+              <div className="h-96 overflow-y-auto p-4 bg-[#110031]">
                 {messages.map((message, index) => (
                   <div
                     key={index}
@@ -343,7 +343,7 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
                       className={`inline-block p-3 rounded-lg max-w-[80%] ${
                         message.type === 'user'
                           ? 'bg-blue-950 text-white'
-                          : 'bg-gray-200 text-gray-800'
+                          : 'bg-blue-400/10 bg-opacity-50 text-white'
                       }`}
                       style={{ whiteSpace: 'pre-line',wordBreak: 'break-word'}}
                     >
@@ -355,14 +355,14 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
               </div>
 
               {/* Chat Input */}
-              <form onSubmit={handleSendMessage} className="p-3 border-t bg-white rounded-b-lg">
+              <form onSubmit={handleSendMessage} className="p-3 border-t bg-[#110031] bg-opacity-80 rounded-b-lg">
                 <div className="flex gap-2">
                   <input
                     type="text"
                     value={inputMessage}
                     onChange={(e) => setInputMessage(e.target.value)}
                     placeholder="Ask me anything..."
-                    className="flex-1 p-2 border text-black rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                    className="flex-1 p-2 border text-white bg-[#110031] bg-opacity-80 rounded-lg  focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                   />
                   <button
                     type="submit"

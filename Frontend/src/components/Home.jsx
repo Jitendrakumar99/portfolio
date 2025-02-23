@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-
+import { FaGithub, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
 const Home = () => {
   const containerRef = useRef(null);
   const tl = useRef(null);
@@ -41,9 +42,27 @@ const Home = () => {
             Jitendra Kumar
           </span>
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8"> 
           Full Stack Developer | UI/UX Designer | Tech Enthusiast
         </p>
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 flex align-items-center justify-center gap-5">
+      <a href="https://github.com/Jitendrakumar99" target="_blank" rel="noopener noreferrer">
+        <FaGithub className="text-4xl hover:text-white transition duration-300" />
+      </a>
+      <a href="https://www.linkedin.com/in/jitendra-kumar-530b78260/" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin className="text-4xl hover:text-blue-500 transition duration-300" />
+      </a>
+      <a href="https://twitter.com/Jitendra6839" target="_blank" rel="noopener noreferrer">
+        <FaTwitter className="text-4xl hover:text-blue-400 transition duration-300" />
+      </a>
+      <a href="https://www.geeksforgeeks.org/user/kumarjitealxt/" target="_blank" rel="noopener noreferrer">
+    <SiGeeksforgeeks className="text-3xl hover:text-green-500 transition duration-300" />
+  </a>
+  <a href="https://leetcode.com/u/Jitendra_kumar11/" target="_blank" rel="noopener noreferrer">
+    <SiLeetcode className="text-3xl hover:text-yellow-500 transition duration-300" />
+  </a>
+      
+    </p>
         <div>
           <button 
             onClick={() => {

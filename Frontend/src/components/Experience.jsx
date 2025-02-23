@@ -75,8 +75,8 @@ const Experience = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="experience" className="min-h-screen bg-gray-900 py-20 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section ref={sectionRef} id="experience" className="min-h-screen  py-20 overflow-hidden">
+      <div className="container about mx-auto px-4 sm:px-6">
         <h2 className="text-4xl font-bold text-center text-white mb-16">Experience</h2>
         
         <div className="relative max-w-6xl mx-auto">
@@ -112,7 +112,7 @@ const Experience = () => {
                       : 'md:mr-auto md:pr-12'
                   }`}
                 >
-                  <div className="bg-gray-800 rounded-lg p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
+                  <div className="bg-blue-400/10 bg-opacity-60 rounded-lg p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300">
                     <h3 className="text-2xl font-semibold text-white mb-3">{exp.title}</h3>
                     <p className="text-blue-400 text-lg mb-2">{exp.company}</p>
                     <p className="text-gray-400 mb-6">{exp.period}</p>

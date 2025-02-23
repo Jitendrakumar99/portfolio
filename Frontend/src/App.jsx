@@ -11,7 +11,7 @@ import Contact from './components/Contact'
 import Chatbot from './components/Chatbot'
 function App() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen  ">
       <Navbar />
       <main className="max-w-[1400px] mx-auto">
         <Home />

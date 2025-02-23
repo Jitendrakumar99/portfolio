@@ -49,8 +49,8 @@ const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="min-h-screen bg-gray-900 py-20 px-4 sm:px-6">
-      <div className="container mx-auto">
+    <section ref={sectionRef} id="about" className="min-h-screen  py-20 px-4 sm:px-6">
+      <div className="container about mx-auto">
         <h2 className="text-4xl font-bold text-center text-white mb-16">About Me</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div ref={textRef} className="space-y-6">
@@ -89,9 +89,9 @@ const About = () => {
           </div>
           <div ref={imageRef} className="relative max-w-md mx-auto md:max-w-none">
             <div className="aspect-square rounded-lg bg-blue-400/10 backdrop-blur-sm p-6">
-              <div className="w-full h-full rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full rounded-lg  bg-gradient-to-bl from-blue-500/10 to-purple-500/10 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="22MH1A05H7.png" 
+                  src="22MH1A05H7-removebg-preview.png" 
                   alt="Profile" 
                   className="w-full h-full object-cover rounded-lg"
                 />

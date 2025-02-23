@@ -19,6 +19,7 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCss"],
     githubLink: "https://github.com/Jitendrakumar99/E-commerce",
     liveLink: "https://e-commerce-kappa-five-61.vercel.app/",
+    autoplayDelay: 2500, 
   },
   
   {
@@ -37,6 +38,7 @@ const projects = [
     ],
     githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
     liveLink: "http://adityauniversity.in:7006/blooddonation",
+    autoplayDelay: 1500, 
   },
   {
     title: "Netflix Clone",
@@ -46,6 +48,7 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     githubLink: "https://github.com/Jitendrakumar99/Netflix",
     liveLink: "https://net-psi-lime.vercel.app/",
+    autoplayDelay: 1000, 
   },
 ];
 
@@ -80,26 +83,31 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="min-h-screen bg-gray-800 py-20 px-4 sm:px-6"
+      className="min-h-screen  py-20 px-4 sm:px-6"
     >
-      <div className="container mx-auto">
+      <div className="about container mx-auto ">
         <h2 className="text-4xl font-bold text-center text-white mb-16">
           My Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20">
           {projects.map((project, index) => (
             <div
               key={index}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="bg-gray-900 rounded-lg overflow-hidden shadow-xl transform hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+              className="bg-blue-400/10 bg-opacity-70 rounded-lg overflow-hidden shadow-xl transform hover:-translate-y-2 transition-transform duration-300 flex flex-col"
             >
               <div className="relative group aspect-video">
                 <div className="relative w-full h-full group">
                   <div className="w-full h-full">
                     <Swiper
-                      pagination={{ clickable: true }}
-                      autoplay={{ delay: 3000, disableOnInteraction: false }}
-                      loop={true}
+                      autoplay={{
+                        delay: project.autoplayDelay, 
+                        disableOnInteraction: false
+                      }}
+                      speed={4000} 
+                      loop={true} 
+                      slidesPerView={1} 
+                      freeMode={true} 
                       modules={[Pagination, Autoplay]}
                       className="w-full h-full"
                     >
@@ -115,7 +123,7 @@ const Projects = () => {
                     </Swiper>
                   </div>
 
-                  <div className="absolute inset-0 bg-blue-600/40 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
+                  <div className="absolute inset-0 bg-[#5C0041]/50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10">
                     <div className="flex space-x-4">
                       <a
                         href={project.githubLink}

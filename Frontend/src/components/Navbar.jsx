@@ -35,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 left-0 right-0  backdrop-blur-sm z-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -71,7 +71,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-gray-900/95">
+          <div className="md:hidden bg-blue-400/10">
             <div className="px-4 pt-4 pb-6 space-y-2">
               {['home', 'about', 'projects', 'skills', 'experience', 'certifications', 'contact'].map((item) => (
                 <button

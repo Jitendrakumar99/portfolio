@@ -75,15 +75,15 @@ const Skills = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="min-h-screen bg-gray-900 py-20">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} id="skills" className="min-h-screen  py-20">
+      <div className="container about mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-white mb-16">Skills & Technologies</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {skills.map((skill, index) => (
             <div
               key={index}
               ref={el => cardsRef.current[index] = el}
-              className="bg-gray-800 rounded-lg p-6 flex flex-col items-center transform hover:-translate-y-2 transition-transform duration-300"
+              className="bg-blue-400/10 bg-opacity-50 rounded-lg p-6 flex flex-col items-center transform hover:-translate-y-2 transition-transform duration-300"
             >
               <skill.icon size={48} color={skill.color} className="mb-4" />
               <h3 className="text-lg font-semibold text-white mb-4">{skill.name}</h3>
