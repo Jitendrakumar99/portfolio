@@ -45,7 +45,7 @@ const projects = [
     images: ["netflix.png","net1.png"],
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     githubLink: "https://github.com/Jitendrakumar99/Netflix",
-    liveLink: "https://jitendrakumar99.github.io/Netflix/",
+    liveLink: "https://net-psi-lime.vercel.app/",
   },
 ];
 
