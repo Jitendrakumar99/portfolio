@@ -16,6 +16,43 @@ const certifications = [
   },
  
 ];
+const projects = [
+  {
+    title: "E-commerce Platform",
+    // description:
+    //   "An e-commerce platform for selling products online. It has a user-friendly interface and is optimized for search engines.",
+    images: ["home.png", "pic1.png", "pic2.png","pic3.png"],
+    technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCss"],
+    githubLink: "https://github.com/Jitendrakumar99/E-commerce",
+    liveLink: "https://project1.com",
+  },
+  {
+    title: "Netflix Clone",
+    // description:
+    //   "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
+    images: ["netflix.png","net1.png"],
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    githubLink: "https://github.com/Jitendrakumar99/Netflix",
+    liveLink: "https://jitendrakumar99.github.io/Netflix/",
+  },
+  {
+    title: "Blood Donation",
+    // description:
+    //   "A responsive Blood Donation website with secure donor registration, real-time database, smooth animations, and a user-friendly UI to connect donors with those in need.",
+    images: ["image.png","blood.png"],
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "TailwindCss",
+      "Bootstrap",
+      "AWS",
+    ],
+    githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
+    liveLink: "http://adityauniversity.in:7006/blooddonation",
+  },
+];
 
 const personalInfo = {
   name: "Jitendra Kumar",
@@ -23,29 +60,29 @@ const personalInfo = {
   location: "andhra pradesh",
   skills: {
     frontend: [
-      { name: 'HTML5', proficiency: 90 },
-      { name: 'CSS3', proficiency: 85 },
-      { name: 'JavaScript', proficiency: 88 },
-      { name: 'React', proficiency: 85 },
-      { name: 'Tailwind CSS', proficiency: 80 },
-      { name: 'Bootstrap', proficiency: 85 }
+      { name: 'HTML5'},
+      { name: 'CSS3'},
+      { name: 'JavaScript' },
+      { name: 'React' },
+      { name: 'Tailwind CSS'},
+      { name: 'Bootstrap'}
     ],
     backend: [
-      { name: 'Node.js', proficiency: 80 },
-      { name: 'Express.js', proficiency: 75 },
-      { name: 'MongoDB', proficiency: 75 },
-      { name: 'MySQL', proficiency: 70 }
+      { name: 'Node.js'},
+      { name: 'Express.js' },
+      { name: 'MongoDB'},
+      { name: 'MySQL' }
     ],
     tools: [
-      { name: 'Git', proficiency: 85 },
-      { name: 'VS Code', proficiency: 90 },
-      { name: 'Postman', proficiency: 85 }
+      { name: 'Git' },
+      { name: 'VS Code' },
+      { name: 'Postman' }
     ],
     other: [
-      { name: 'Problem Solving', proficiency: 85 },
-      { name: 'Team Collaboration', proficiency: 90 },
-      { name: 'Agile Methodology', proficiency: 80 },
-      { name: 'RESTful APIs', proficiency: 85 }
+      { name: 'Problem Solving'},
+      { name: 'Team Collaboration' },
+      { name: 'Agile Methodology' },
+      { name: 'RESTful APIs' }
     ]
   },
   hobbies: [
@@ -218,6 +255,12 @@ Achievements:
 ${personalInfo.education.achievements.map(achievement => `🏆 ${achievement}`).join('\n')}`;
     }
 
+    //project
+    if (input.includes('project') || input.includes('liveproject')) {
+      return `Here are my Project:
+${projects.map(cert => `📜 ${cert.title} (${cert.technologies})  ${cert.liveLink}`).join('\n')}`;
+    }
+
     // Certification related queries
     if (input.includes('certification') || input.includes('certificate')) {
       return `Here are my certifications:
@@ -264,7 +307,7 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
       ) : (
         <div className="bg-white rounded-lg shadow-2xl w-80 transition-all duration-300">
           {/* Chat Header */}
-          <div className="bg-primary text-white p-3 rounded-t-lg flex justify-between items-center">
+          <div className="bg-blue-950 text-white p-3 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2">
               <FaRobot className="text-xl" />
               <span className="font-medium">Portfolio Assistant</span>
@@ -299,10 +342,10 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
                     <div
                       className={`inline-block p-3 rounded-lg max-w-[80%] ${
                         message.type === 'user'
-                          ? 'bg-primary text-white'
+                          ? 'bg-blue-950 text-white'
                           : 'bg-gray-200 text-gray-800'
                       }`}
-                      style={{ whiteSpace: 'pre-line' }}
+                      style={{ whiteSpace: 'pre-line',wordBreak: 'break-word'}}
                     >
                       {message.text}
                     </div>

@@ -5,18 +5,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Smooth Scroll Function
+ 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
 
-      // Close the menu with a small delay for a smoother effect
       setTimeout(() => setIsOpen(false), 2000);
     }
   };
 
-  // Intersection Observer to Track Active Section
+  
   useEffect(() => {
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(
