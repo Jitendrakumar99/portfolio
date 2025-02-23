@@ -28,7 +28,7 @@ body {
   background-attachment: fixed; 
 }
 .about{
-  background-image: url('grid.png');
+  background-image: url('https://res.cloudinary.com/du15dlpjn/image/upload/v1740324983/grid_tonasc.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
