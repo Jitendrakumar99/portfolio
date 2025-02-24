@@ -8,12 +8,35 @@ const Navbar = () => {
  
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => setIsOpen(false), 2000);
-    }
+    if (!element) return;
+  
+    const navbarHeight = 70; 
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 800; 
+    let startTime = null;
+  
+    const smoothScroll = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+  
+      window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
+  
+      if (timeElapsed < duration) {
+        requestAnimationFrame(smoothScroll);
+      } else {
+        setTimeout(() => setIsOpen(false), 500); 
+      }
+    };
+  
+    const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  
+    requestAnimationFrame(smoothScroll);
   };
+  
+  
 
   
   useEffect(() => {
