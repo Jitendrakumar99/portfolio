@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaExternalLinkAlt, FaCalendarAlt, FaAward } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaCalendarAlt, FaAward, FaTimes } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +10,7 @@ const certifications = [
     title: "GalileoX Progra001 Certificate | edX",
     issuer: "GalileoX edx",
     date: "24 April2024",
-    credentialLink: "https://drive.google.com/file/d/1phqIgdlsQsSUea4lH4BS8zyfULZombSr/view?usp=drive_link",
+    credentialLink: "./certificate/GalileoX.png",
     skills: ["Java Programming Fundamentals"],
     badgeUrl: "https://udemy-certificate.s3.amazonaws.com/image/your-badge.png"
   },
@@ -18,7 +18,7 @@ const certifications = [
     title: "Red Hat Training Presents - Introduction to Python Programming (AD141)",
     issuer: "Red Hat Academy",
     date: "Sept. 23, 2024",
-    credentialLink: "https://drive.google.com/file/d/15lydcdYHOwu9q2HaYjYcJoOASZBOY08Z/view?usp=drive_link",
+    credentialLink: "/certificate/Certificate of Attendance (AD141-9.0)-1.png",
     skills: ["Python Programming"],
     badgeUrl: "https://udemy-certificate.s3.amazonaws.com/image/your-badge.png"
   },
@@ -26,7 +26,7 @@ const certifications = [
     title: "Red Hat System Administration I (RH124)",
     issuer: "Red Hat Academy",
     date: "April 25, 2024",
-    credentialLink: "https://drive.google.com/file/d/1oFboptqsV828GjjbpiGSD6Sdl7St13A_/view?usp=drive_link",
+    credentialLink: "./certificate/Certificate of Attendance (RH124-9.0)-1.png",
     skills: ["System Administration"],
     badgeUrl: "https://udemy-certificate.s3.amazonaws.com/image/your-badge.png"
   },
@@ -34,7 +34,7 @@ const certifications = [
     title: "Red Hat System Administration II (RH134)",
     issuer: "Red Hat Academy",
     date: "April 25, 2024",
-    credentialLink: "https://drive.google.com/file/d/10y3_iN_wwuoukldmK1x0GZ7UzndXfXtW/view?usp=drive_link",
+    credentialLink: "./certificate/Certificate of Attendance (RH134-9.0)-1.png",
     skills: ["System Administration"],
     badgeUrl: "https://udemy-certificate.s3.amazonaws.com/image/your-badge.png"
   },
@@ -42,7 +42,7 @@ const certifications = [
     title: "HackerRank java basics",
     issuer: "HackerRank",
     date: "Sep 23, 2024",
-    credentialLink: "https://drive.google.com/file/d/1PXYt28A4OGV9LOBl-ipEDhRnIKTDbgXH/view?usp=drive_link",
+    credentialLink: "./certificate/javascript_basic certificate-1.png",
     skills: ["Java Programming"],
     badgeUrl: "https://d3n93yrl3yuxvg.cloudfront.net/assets/hackerrank/certificates/your-badge.png"
   },
@@ -50,7 +50,7 @@ const certifications = [
     title: "CodeSoft",
     issuer: "CodeSoft",
     date: "Dec 3 2023",
-    credentialLink: "https://drive.google.com/file/d/1xGx8BF-jzXeaxFeCn-4oHTkyGVdjd3au/view?usp=drive_link",
+    credentialLink: "./certificate/Jitendra Kumar codsoft -1.png",
     skills: ["JavaScript", "Node.js", "MongoDB", "Express"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
@@ -58,7 +58,7 @@ const certifications = [
     title: "CPA: Programming Essentials in C++",
     issuer: "C++ Instutute",
     date: "July 13 2023",
-    credentialLink: "https://drive.google.com/file/d/1ujTKhFdrWi1GNW50D8Y1RU9PbVtR5W4a/view?usp=drive_link",
+    credentialLink: "./certificate/Jitendrakumar-CPA - Programmin-certificate-1.png",
     skills: ["C++ Programming"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
@@ -66,25 +66,33 @@ const certifications = [
     title: "CLA: Programming Essentials in C",
     issuer: "C++ Instutute",
     date: "Jan 22 2023",
-    credentialLink: "https://drive.google.com/file/d/1XWvRdUAx0HmGghcScczoRLc2QSks3ly4/view?usp=drive_link",
+    credentialLink: "./certificate/Jitendrakumar-Programming Esse-certificate-1.png",
     skills: ["C++ Programming"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
   {
-    title: "Full Stack Web Development",
-    issuer: "FreeCodeCamp",
+    title: "Communicating with impact",
+    issuer: "IBM",
     date: "2023",
-    credentialLink: "https://www.freecodecamp.org/certification/your-username",
-    skills: ["JavaScript", "Node.js", "MongoDB", "Express"],
+    credentialLink: "./certificate/SkillsBuild-1.png",
+    skills: ["IT Specialist"],
+    badgeUrl: "https://images.credly.com/your-badge.png"
+  },
+  {
+    title:'Front End Development - CSS',
+    issuer: "Great Learning",
+    date: "April 23 2023",
+    credentialLink: "./certificate/frontendcss.png",
+    skills: ["CSS"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
   {
-    title: "It Specialist",
-    issuer: "IBM",
-    date: "2023",
-    credentialLink: "https://www.credly.com/badges/your-badge",
-    skills: ["IT Specialist"],
-    badgeUrl: "https://images.credly.com/your-badge.png"
+    title:'Front End Development - HTML',
+    issuer: "Great Learning",
+    date: "January 2023",
+    credentialLink: "./certificate/frontendhtml.png",
+    skills: ["CSS"],
+    badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
   // Add more certifications as needed
 ];
@@ -92,6 +100,15 @@ const certifications = [
 const Certifications = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
+  const [showimage, setshowimage] = useState("");
+  
+  const handleimage = (img) => {
+    setshowimage(img);
+  }
+
+  const closeModal = () => {
+    setshowimage("");
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -99,14 +116,14 @@ const Certifications = () => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=120",
+            start: "top bottom-=100",
             end: "top center",
             toggleActions: "play none none reverse"
           },
           y: 50,
           opacity: 0,
           duration: 0.8,
-          delay: index * 0.2,
+          delay: index * 0.1,
           ease: "power3.out"
         });
       });
@@ -116,7 +133,7 @@ const Certifications = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="certifications" className="min-h-screen  py-20">
+    <section ref={sectionRef} id="certifications" className="min-h-screen py-20">
       <div className="container about mx-auto px-4 sm:px-6">
         <h2 className="text-4xl font-bold text-center text-white mb-16">Certifications</h2>
         
@@ -156,19 +173,57 @@ const Certifications = () => {
                 </div>
               </div>
 
-              <a
-                href={cert.credentialLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+              <div
+                onClick={() => handleimage(cert.credentialLink)}
+                className="inline-flex items-center cursor-pointer text-blue-400 hover:text-blue-300 transition-colors"
               >
                 View Certificate
                 <FaExternalLinkAlt className="ml-2 text-sm" />
-              </a>
+              </div>
             </div>
           ))}
         </div>
-        
+
+        {showimage && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop with blur */}
+            <div 
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={closeModal}
+            ></div>
+            
+            {/* Modal content */}
+            <div className="relative z-50 max-w-[90vw] max-h-[90vh] rounded-lg overflow-hidden">
+              {/* Loading video background */}
+              <div className="absolute inset-0 w-full h-full">
+                <video 
+                  src="LoadingScreen.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Close button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 z-50 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full p-2"
+              >
+                <FaTimes size={20} />
+              </button>
+              
+              {/* Certificate image */}
+              <div className="relative z-10 w-full h-full flex items-center justify-center">
+                <img 
+                  src={showimage} 
+                  alt="Certificate" 
+                  className="max-w-full max-h-[85vh] object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

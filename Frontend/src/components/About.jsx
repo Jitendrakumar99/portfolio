@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -99,8 +99,8 @@ const About = () => {
             ref={imageRef}
             className="relative max-w-md mx-auto md:max-w-none"
           >
-            <div className="aspect-square rounded-lg bg-blue-400/10 backdrop-blur-sm p-6">
-              <div className="w-full h-full rounded-lg  bg-gradient-to-bl from-blue-500/10 to-purple-500/10 flex items-center justify-center overflow-hidden">
+            <div className="aspect-square rounded-full bg-blue-400/10  p-6">
+              <div className="w-full h-full rounded-full  bg-gradient-to-bl from-blue-500/10 to-purple-500/10 flex items-center justify-center overflow-hidden">
                 <img
                   src="22MH1A05H7-removebg-preview.png"
                   alt="Profile"

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -55,10 +55,26 @@ const projects = [
 const Projects = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
+  const [showLiveSite, setShowLiveSite] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLiveSite = (url) => {
+    setIsLoading(true);
+    setShowLiveSite(url);
+    
+    // Set a timeout to ensure loading state is shown
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // 500 milliseconds loading time
+  }
+
+  const closeModal = () => {
+    setShowLiveSite("");
+    setIsLoading(false);
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate each card
       cardsRef.current.forEach((card, index) => {
         gsap.from(card, {
           scrollTrigger: {
@@ -83,9 +99,9 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="min-h-screen  py-20 px-4 sm:px-6"
+      className="min-h-screen py-20 px-4 sm:px-6"
     >
-      <div className="about container mx-auto ">
+      <div className="about container mx-auto">
         <h2 className="text-4xl font-bold text-center text-white mb-16">
           My Projects
         </h2>
@@ -101,13 +117,13 @@ const Projects = () => {
                   <div className="w-full h-full">
                     <Swiper
                       autoplay={{
-                        delay: project.autoplayDelay, 
+                        delay: project.autoplayDelay,
                         disableOnInteraction: false
                       }}
-                      speed={4000} 
-                      loop={true} 
-                      slidesPerView={1} 
-                      freeMode={true} 
+                      speed={4000}
+                      loop={true}
+                      slidesPerView={1}
+                      freeMode={true}
                       modules={[Pagination, Autoplay]}
                       className="w-full h-full"
                     >
@@ -133,14 +149,12 @@ const Projects = () => {
                       >
                         <FaGithub className="w-10 h-10" />
                       </a>
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => handleLiveSite(project.liveLink)}
                         className="text-white hover:text-gray-200 transform hover:scale-110 transition-transform"
                       >
                         <FaExternalLinkAlt className="w-10 h-10" />
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -166,6 +180,52 @@ const Projects = () => {
             </div>
           ))}
         </div>
+
+        {/* Live Site Modal */}
+        {showLiveSite && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop with blur */}
+            <div 
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+              onClick={closeModal}
+            ></div>
+            
+            {/* Modal content */}
+            <div className="relative z-50 w-[95vw] h-[95vh] rounded-lg overflow-hidden">
+              {/* Loading video background */}
+              <div className="absolute inset-0 w-full h-full">
+                <video 
+                  src="LoadingScreen.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Close button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 z-50 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full p-2"
+              >
+                <FaTimes size={20} />
+              </button>
+              
+              {/* Website iframe */}
+              <div className="relative z-10 w-full h-full">
+                {isLoading ? (
+                  <div className="w-full h-full" />
+                ) : (
+                  <iframe 
+                    src={showLiveSite}
+                    className="w-full h-full border-0"
+                    title="Live Website Preview"
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
