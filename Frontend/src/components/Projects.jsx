@@ -45,7 +45,7 @@ const projects = [
     description:
       "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
     images: ["netflix.png","net1.png"],
-    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    technologies: ["React","TailwindCss" ],
     githubLink: "https://github.com/Jitendrakumar99/Netflix",
     liveLink: "https://net-psi-lime.vercel.app/",
     autoplayDelay: 1000, 

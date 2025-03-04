@@ -15,7 +15,8 @@ function App() {
   return (
     <>
       <CustomCursor />
-      <div className="min-h-screen  ">
+      <Chatbot />
+      <div className="min-h-screen">
         <Navbar />
         <main className="max-w-[1400px] mx-auto">
           <Home />
@@ -25,7 +26,6 @@ function App() {
           <Experience />
           <Certifications />
           <Contact />
-          <Chatbot />
         </main>
       </div>
     </>

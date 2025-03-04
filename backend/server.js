@@ -10,7 +10,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Create a transporter for sending emails
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -19,15 +18,14 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Contact form endpoint
 app.post('/api/contact', async (req, res) => {
     const { name, email, message } = req.body;
 
     try {
-        // Email options
+       
         const mailOptions = {
             from: process.env.EMAIL,
-            to: process.env.EMAIL, // Your email where you want to receive messages
+            to: process.env.EMAIL, 
             subject: `Portfolio Contact Form - Message from ${name}`,
             html: `
                 <h3>New Contact Form Submission</h3>
@@ -37,7 +35,7 @@ app.post('/api/contact', async (req, res) => {
             `
         };
 
-        // Send email
+       
         await transporter.sendMail(mailOptions);
         res.status(200).json({ success: true, message: 'Email sent successfully!' });
     } catch (error) {

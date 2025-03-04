@@ -34,10 +34,10 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden">
-      <div ref={containerRef} className="text-center w-full max-w-4xl mx-auto pt-16">
+    <section id="home" className="min-h-screen w-full flex items-center justify-center overflow-hidden">
+      <div ref={containerRef} className="text-center w-full max-w-4xl mx-auto px-4 sm:px-6 pt-20 md:pt-16">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 break-words">
-          <span className="text-white">Hi, I'm </span>
+          <span className="text-white">Hi, I&apos;m </span>
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
             Jitendra Kumar
           </span>
@@ -45,24 +45,23 @@ const Home = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8"> 
           Full Stack Developer | UI/UX Designer | Tech Enthusiast
         </p>
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 flex align-items-center justify-center gap-5">
-      <a href="https://github.com/Jitendrakumar99" target="_blank" rel="noopener noreferrer">
-        <FaGithub className="text-4xl hover:text-white transition duration-300" />
-      </a>
-      <a href="https://www.linkedin.com/in/jitendra-kumar-530b78260/" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin className="text-4xl hover:text-blue-500 transition duration-300" />
-      </a>
-      <a href="https://twitter.com/Jitendra6839" target="_blank" rel="noopener noreferrer">
-        <FaTwitter className="text-4xl hover:text-blue-400 transition duration-300" />
-      </a>
-      <a href="https://www.geeksforgeeks.org/user/kumarjitealxt/" target="_blank" rel="noopener noreferrer">
-    <SiGeeksforgeeks className="text-3xl hover:text-green-500 transition duration-300" />
-  </a>
-  <a href="https://leetcode.com/u/Jitendra_kumar11/" target="_blank" rel="noopener noreferrer">
-    <SiLeetcode className="text-3xl hover:text-yellow-500 transition duration-300" />
-  </a>
-      
-    </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 mb-8">
+          <a href="https://github.com/Jitendrakumar99" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-3xl sm:text-4xl hover:text-white transition duration-300" />
+          </a>
+          <a href="https://www.linkedin.com/in/jitendra-kumar-530b78260/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-3xl sm:text-4xl hover:text-blue-500 transition duration-300" />
+          </a>
+          <a href="https://twitter.com/Jitendra6839" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-3xl sm:text-4xl hover:text-blue-400 transition duration-300" />
+          </a>
+          <a href="https://www.geeksforgeeks.org/user/kumarjitealxt/" target="_blank" rel="noopener noreferrer">
+            <SiGeeksforgeeks className="text-2xl sm:text-3xl hover:text-green-500 transition duration-300" />
+          </a>
+          <a href="https://leetcode.com/u/Jitendra_kumar11/" target="_blank" rel="noopener noreferrer">
+            <SiLeetcode className="text-2xl sm:text-3xl hover:text-yellow-500 transition duration-300" />
+          </a>
+        </div>
         <div>
           <button 
             onClick={() => {

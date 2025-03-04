@@ -4,6 +4,7 @@
 
 * {
   cursor: none;
+  box-sizing: border-box; /* Add this line */
 }
 
 .cursor {
@@ -14,7 +15,7 @@
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transition: all 0.4s ease-out;
+  transition: all 0.6s ease-out;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +49,8 @@ button:hover ~ .cursor {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
-  /* overflow-y: auto; */
+  width: 100%; /* Add this line */
+  overflow-x: hidden; /* Add this line */
 }
 
 body {
@@ -56,7 +58,8 @@ body {
   padding: 0;
   min-height: 100vh;
   overflow-y: auto;
-  overflow-x: hidden;
+  width: 100%; /* Ensure this line is present */
+  overflow-x: hidden; /* Ensure this line is present */
   line-height: 1.5;
   color: #f8fafc;
   background-image: url('https://raw.githubusercontent.com/itsvijaysingh/My-Portfolio/refs/heads/main/assets/images/dark-bg.webp');
@@ -65,32 +68,7 @@ body {
   background-repeat: no-repeat; 
   background-attachment: fixed; 
 }
-.about{
-  background-image: url('https://res.cloudinary.com/du15dlpjn/image/upload/v1740324983/grid_tonasc.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; 
-  background-attachment: fixed; 
-}
-/* Custom scrollbar */
-/* ::-webkit-scrollbar {
-  width: 8px;
-}
 
-::-webkit-scrollbar-track {
-  background: #1e293b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
-} */
-
-/* Section styles */
 section {
   min-height: 100vh;
   padding: 5rem 0;
@@ -98,7 +76,6 @@ section {
   align-items: center;
 }
 
-/* Animation classes */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -110,7 +87,6 @@ section {
   transform: translateY(0);
 }
 
-/* Card hover effects */
 .hover-card {
   transition: all 0.3s ease;
 }
@@ -120,7 +96,6 @@ section {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Gradient text */
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
 }

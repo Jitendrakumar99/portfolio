@@ -58,21 +58,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0  backdrop-blur-sm z-50">
+    <nav className="fixed top-0 backdrop-blur-sm shadow-md z-50 w-screen">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-white">Jitendra's Portfolio</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-white truncate">Jitendra&apos;s Portfolio</h1>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {['home', 'about', 'projects', 'skills', 'experience', 'certifications', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`capitalize transition-colors ${
+                className={`capitalize transition-colors text-sm lg:text-base ${
                   activeSection === item ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
                 }`}
               >
@@ -82,31 +82,34 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white p-2"
+              className="text-gray-300 hover:text-white p-1"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-blue-400/10">
-            <div className="px-4 pt-4 pb-6 space-y-2">
-              {['home', 'about', 'projects', 'skills', 'experience', 'certifications', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`block w-full text-left px-4 py-2 capitalize transition-colors ${
-                    activeSection === item ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
+          <div className="md:hidden absolute left-0 right-0 backdrop-blur-md border-t border-gray-600/20">
+            <div className="max-w-[1400px] mx-auto">
+              <div className="px-4 py-2 space-y-1">
+                {['home', 'about', 'projects', 'skills', 'experience', 'certifications', 'contact'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className={`block w-full text-left px-3 py-2 capitalize transition-colors text-sm ${
+                      activeSection === item ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}

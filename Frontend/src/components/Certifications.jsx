@@ -67,7 +67,7 @@ const certifications = [
     issuer: "C++ Instutute",
     date: "Jan 22 2023",
     credentialLink: "./certificate/Jitendrakumar-Programming Esse-certificate-1.png",
-    skills: ["C++ Programming"],
+    skills: ["C Programming"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
   {
@@ -75,7 +75,7 @@ const certifications = [
     issuer: "IBM",
     date: "2023",
     credentialLink: "./certificate/SkillsBuild-1.png",
-    skills: ["IT Specialist"],
+    skills: ["Communication"],
     badgeUrl: "https://images.credly.com/your-badge.png"
   },
   {
@@ -94,6 +94,22 @@ const certifications = [
     skills: ["CSS"],
     badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
   },
+  {
+    title:'C-Intern',
+    issuer: "Technical Hub",
+    date: "29-08 to 21-12 2024",
+    credentialLink: "./certificate/22MH1A05H7-1.png",
+    skills: ["Gained Experience"],
+    badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
+  },
+  {
+    title:'Internship',
+    issuer: "Technical Hub",
+    date: "16-05 to 17-06  2024",
+    credentialLink: "./certificate/22MH1A05H7INTERNSHIP-1.png",
+    skills: ["Html,Css,Javascript,BootStrap"],
+    badgeUrl: "https://cdn.freecodecamp.org/your-badge.png"
+  }
   // Add more certifications as needed
 ];
 
