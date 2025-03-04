@@ -51,6 +51,7 @@ html {
   scroll-padding-top: 4rem;
   width: 100%; /* Add this line */
   overflow-x: hidden; /* Add this line */
+  background-color: black;
 }
 
 body {
