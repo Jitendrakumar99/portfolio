@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa'; // Import icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isNightMode, setIsNightMode] = useState(false); // New state for night mode
 
- 
+  const toggleNightMode = () => {
+    setIsNightMode(!isNightMode);
+    document.body.classList.toggle('night-mode', !isNightMode);
+  };
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (!element) return;
@@ -79,10 +84,22 @@ const Navbar = () => {
                 {item}
               </button>
             ))}
+            <button
+              onClick={toggleNightMode}
+              className="capitalize transition-colors text-sm lg:text-base text-gray-300 hover:text-white"
+            >
+              {isNightMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
+          <button
+                  onClick={toggleNightMode}
+                  className="block w-full text-left px-3 py-2 capitalize transition-colors text-sm text-gray-300 hover:text-white"
+                >
+                  {isNightMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+                </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white p-1"
@@ -95,7 +112,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden absolute left-0 right-0 backdrop-blur-md border-t border-gray-600/20">
+          <div className="md:hidden absolute left-0 right-0  bg-blue-300/10 backdrop-blur-sm shadow-lg border-t border-gray-600/20">
             <div className="max-w-[1400px] mx-auto">
               <div className="px-4 py-2 space-y-1">
                 {['home', 'about', 'projects', 'skills', 'experience', 'certifications', 'contact'].map((item) => (
@@ -109,6 +126,7 @@ const Navbar = () => {
                     {item}
                   </button>
                 ))}
+                
               </div>
             </div>
           </div>

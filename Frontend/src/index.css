@@ -8,8 +8,8 @@
 }
 
 .cursor {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border: 2px solid #4f46e5;
   border-radius: 50%;
   position: fixed;
@@ -22,10 +22,10 @@
 }
 
 .cursor-dot {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   margin: 4px;
-  background-color: #870049;
+  background-color: #eb0680;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -69,7 +69,18 @@ body {
   background-repeat: no-repeat; 
   background-attachment: fixed; 
 }
-
+body.night-mode {
+  background-image: none;
+  background-color: #1a202c;
+  background-size: cover;
+}
+.about{
+  background-image: url('https://res.cloudinary.com/du15dlpjn/image/upload/v1740324983/grid_tonasc.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
 section {
   min-height: 100vh;
   padding: 5rem 0;
