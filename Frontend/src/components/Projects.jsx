@@ -18,7 +18,7 @@ const projects = [
     images: ["home.png", "pic1.png", "pic2.png","pic3.png"],
     technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCss"],
     githubLink: "https://github.com/Jitendrakumar99/E-commerce",
-    liveLink: "https://e-commerce-kappa-five-61.vercel.app/",
+    liveLink: "https://e-commerce-self-alpha.vercel.app/",
     autoplayDelay: 2500, 
   },
   
