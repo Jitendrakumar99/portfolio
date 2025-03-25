@@ -24,13 +24,13 @@ const CustomCursor = () => {
       <div
         className="cursor"
         style={{
-          transform: `translate(${position.x - 10}px, ${position.y - 10}px)`,
+          transform: `translate(${position.x -15}px, ${position.y - 15}px)`,
         }}
       />
       <div
         className="cursor-dot"
         style={{
-          transform: `translate(${dotPosition.x - 2}px, ${dotPosition.y - 2}px)`,
+          transform: `translate(${dotPosition.x - 3}px, ${dotPosition.y - 3}px)`,
         }}
       />
     </>

@@ -2,7 +2,8 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim"; 
-
+// for install the dependencies run the following command
+//npm install @tsparticles/react @tsparticles/slim
 
 
 
@@ -48,13 +49,14 @@ const ParticlesComponent = (props) => {
             duration: 15,
           },
           grab: {
-            distance: 150,
+            distance: 250,
           },
         },
       },
       particles: {
         color: {
           value: "#FFFFFF",
+          // value: "#7D0A0A",
         },
         links: {
           color: "#FFFFFF",
@@ -86,7 +88,7 @@ const ParticlesComponent = (props) => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 5 },
         },
       },
       detectRetina: true,
