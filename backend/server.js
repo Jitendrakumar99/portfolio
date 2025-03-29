@@ -19,14 +19,14 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/api/contact', async (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, email,subject, message } = req.body;
 
     try {
        
         const mailOptions = {
             from: process.env.EMAIL,
             to: process.env.EMAIL, 
-            subject: `Portfolio Contact Form - Message from ${name}`,
+            subject: {subject},
             html: `
                 <h3>New Contact Form Submission</h3>
                 <p><strong>Name:</strong> ${name}</p>

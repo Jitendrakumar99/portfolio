@@ -11,6 +11,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
   const [loading, setLoading] = useState(false);
@@ -68,6 +69,7 @@ const Contact = () => {
         setFormData({
           name: '',
           email: '',
+          subject: '',
           message: ''
         });
       } else {
@@ -142,6 +144,18 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full bg-blue-400/10  border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
                       placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-gray-300 mb-1 sm:mb-2 text-base sm:text-lg">Subject</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      className="w-full bg-blue-400/10  border border-gray-600 rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-white focus:outline-none focus:border-blue-500 transition-colors text-base sm:text-lg"
+                      placeholder="Subject"
                       required
                     />
                   </div>

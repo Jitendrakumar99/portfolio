@@ -229,49 +229,68 @@ const Projects = () => {
 
         {/* Live Site Modal */}
         {showLiveSite && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop with blur */}
-            <div 
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm"
-              onClick={closeModal}
-            ></div>
-            
-            {/* Modal content */}
-            <div className="relative z-50 w-[95vw] h-[95vh] rounded-lg overflow-hidden">
-              {/* Loading video background */}
-              <div className="absolute inset-0 w-full h-full">
-                <video 
-                  src="LoadingScreen.mp4" 
-                  autoPlay 
-                  muted 
-                  loop 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Close button */}
-              <button
-                onClick={closeModal}
-                className="absolute top-2 right-2 z-50 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full p-2"
-              >
-                <FaTimes size={20} />
-              </button>
-              
-              {/* Website iframe */}
-              <div className="relative z-10 w-full h-full">
-                {isLoading ? (
-                  <div className="w-full h-full" />
-                ) : (
-                  <iframe 
-                    src={showLiveSite}
-                    className="w-full h-full border-0"
-                    title="Live Website Preview"
-                  />
-                )}
-              </div>
+  <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    {/* Backdrop with blur */}
+    <div 
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+      onClick={closeModal}
+    ></div>
+
+    {/* Modal content */}
+    <div className="relative z-50 w-[95vw] h-[95vh] rounded-lg overflow-hidden">
+      {/* Loading video background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          src="LoadingScreen.mp4" 
+          autoPlay 
+          muted 
+          loop 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      {/* Close button */}
+      <button
+        onClick={closeModal}
+        className="absolute top-2 right-2 z-50 text-white hover:text-gray-300 transition-colors bg-black/50 rounded-full p-2"
+      >
+        <FaTimes size={20} />
+      </button>
+
+      {/* Website iframe */}
+      <div className="relative z-10 w-full h-full">
+        {isLoading ? (
+          <div className="w-full h-full" />
+        ) : (
+          <>
+            {/* Popup Message */}
+            <div className="absolute top-4 left-4 bg-yellow-500 text-black px-4 py-2 rounded-md shadow-md z-50">
+              <p className="text-sm font-semibold">
+                ⚠️ If you can't log in, 
+                <a 
+                  href={showLiveSite} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="underline text-blue-800 hover:text-blue-900 ml-1"
+                >
+                  click here to open in a new tab
+                </a>.
+              </p>
             </div>
-          </div>
+
+            {/* Embedded website */}
+            <iframe 
+              src={showLiveSite}
+              className="w-full h-full border-0"
+              title="Live Website Preview"
+            />
+          </>
         )}
+      </div>
+    </div>
+  </div>
+)}
+
       </div>
     </section>
   );
