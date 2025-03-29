@@ -87,7 +87,7 @@ const About = () => {
                 <p className="text-gray-300">Location: Andhra Pradesh</p>
               </div>
               <a
-                href="/Jitendra_Resume.pdf"
+                href="/jitendraresume1.pdf"
                 download="Jitendra_Resume.pdf"
                 className="inline-block px-6 py-2 border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white rounded-md transition"
               >

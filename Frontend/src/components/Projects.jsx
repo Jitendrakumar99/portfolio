@@ -41,6 +41,26 @@ const projects = [
     autoplayDelay: 1500, 
   },
   {
+    title: "Whiteboard",
+    description:
+      "A collaborative whiteboard application for brainstorming and visualizing ideas in real-time.",
+    images: ["Screenshot 2025-03-29 110006.png","Screenshot 2025-03-29 105922.png","Screenshot 2025-03-29 105940.png"],
+    technologies: ["React", "Next.js", "Node.js", "MongoDB"],
+    githubLink: "https://github.com/Jitendrakumar99",
+    liveLink: "https://jitendradev.tech/",
+    autoplayDelay: 2000,
+  },
+  {
+    title: "CourseHub Learning Website",
+    description:
+      "A Website Where user can learn the basic of all language and the main part user can take the component and use it in their own site",
+    images: ["./Course/course1.png","./Course/course2.png","./Course/course3.png","./Course/course4.png","./Course/course5.png","./Course/course6.png","./Course/course7.png"],
+    technologies: ["React", "Next.js", "Node.js", "MongoDB","OPENAI"],
+    githubLink: "https://github.com/Jitendrakumar99",
+    liveLink: "",
+    autoplayDelay: 1500,
+  },
+  {
     title: "Netflix Clone",
     description:
       "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
@@ -57,16 +77,21 @@ const Projects = () => {
   const cardsRef = useRef([]);
   const [showLiveSite, setShowLiveSite] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleLiveSite = (url) => {
-    setIsLoading(true);
-    setShowLiveSite(url);
-    
-    // Set a timeout to ensure loading state is shown
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500); // 500 milliseconds loading time
+  const [showComingSoon, setShowComingSoon] = useState(false);
+ const handleLiveSite = (url) => {
+  if (!url) {
+    setShowComingSoon(true);
+    return;
   }
+
+  setIsLoading(true);
+  setShowLiveSite(url);
+
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 500);
+};
+
 
   const closeModal = () => {
     setShowLiveSite("");
@@ -180,6 +205,27 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        {showComingSoon && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    {/* Backdrop */}
+    <div 
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+      onClick={() => setShowComingSoon(false)}
+    ></div>
+
+    {/* Modal Content */}
+    <div className="relative z-50 bg-gray-900 text-white p-6 rounded-lg shadow-lg max-w-md text-center">
+      <h2 className="text-2xl font-bold mb-4">🚧 Coming Soon!</h2>
+      <p className="mb-4">I'm still working on this project. Stay tuned for updates! 🚀</p>
+      <button 
+        className="bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+        onClick={() => setShowComingSoon(false)}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
 
         {/* Live Site Modal */}
         {showLiveSite && (
