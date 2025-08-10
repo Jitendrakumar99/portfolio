@@ -62,6 +62,7 @@ const Home = () => {
             <SiLeetcode className="text-2xl sm:text-3xl hover:text-yellow-500 transition duration-300" />
           </a>
         </div>
+      
         <div>
           <button 
             onClick={() => {
@@ -75,30 +76,6 @@ const Home = () => {
             Get In Touch
           </button>
         </div>
-        <div style="display: block;">
-  <a href="https://page.engineer/" style="display: block;">https://page.engineer/</a>
-  <a href="https://page.engineer/about" style="display: block;">https://page.engineer/about</a>
-  <a href="https://page.engineer/contact" style="display: block;">https://page.engineer/contact</a>
-  <a href="https://page.engineer/privacy-policy" style="display: block;">https://page.engineer/privacy-policy</a>
-  <a href="https://page.engineer/terms" style="display: block;">https://page.engineer/terms</a>
-  <a href="https://page.engineer/cookie-policy" style="display: block;">https://page.engineer/cookie-policy</a>
-  <a href="https://page.engineer/advertise" style="display: block;">https://page.engineer/advertise</a>
-  <a href="https://page.engineer/game" style="display: block;">https://page.engineer/game</a>
-  <a href="https://page.engineer/category/web-development" style="display: block;">https://page.engineer/category/web-development</a>
-  <a href="https://page.engineer/category/technology" style="display: block;">https://page.engineer/category/technology</a>
-  <a href="https://page.engineer/category/programming" style="display: block;">https://page.engineer/category/programming</a>
-  <a href="https://page.engineer/category/comparisons" style="display: block;">https://page.engineer/category/comparisons</a>
-  <a href="https://page.engineer/blog/css-quiz-test-your-knowledge-50-questions" style="display: block;">https://page.engineer/blog/css-quiz-test-your-knowledge-50-questions</a>
-  <a href="https://page.engineer/blog/html-quiz-test-your-knowledge-top-50-questions" style="display: block;">https://page.engineer/blog/html-quiz-test-your-knowledge-top-50-questions</a>
-  <a href="https://page.engineer/blog/placement-woes-skills-vs-opportunity-in-college" style="display: block;">https://page.engineer/blog/placement-woes-skills-vs-opportunity-in-college</a>
-  <a href="https://page.engineer/blog/top-50-full-stack-developer-interview-questions" style="display: block;">https://page.engineer/blog/top-50-full-stack-developer-interview-questions</a>
-  <a href="https://page.engineer/blog/10-best-ai-tools-every-web-developer-should-use-in-2025-with-official-links" style="display: block;">https://page.engineer/blog/10-best-ai-tools-every-web-developer-should-use-in-2025-with-official-links</a>
-  <a href="https://page.engineer/blog/what-you-should-know-in-react-js-for-cracking-developer-interviews" style="display: block;">https://page.engineer/blog/what-you-should-know-in-react-js-for-cracking-developer-interviews</a>
-  <a href="https://page.engineer/blog/how-to-use-github-a-step-by-step-guide-to-push-clone-and-collaborate-on-code" style="display: block;">https://page.engineer/blog/how-to-use-github-a-step-by-step-guide-to-push-clone-and-collaborate-on-code</a>
-  <a href="https://page.engineer/blog/deploy-next-js-with-domain-on-vps-via-nginx-github-page-engineer" style="display: block;">https://page.engineer/blog/deploy-next-js-with-domain-on-vps-via-nginx-github-page-engineer</a>
-  <a href="https://page.engineer/blog/how-to-add-an-a-or-aaaa-dns-record" style="display: block;">https://page.engineer/blog/how-to-add-an-a-or-aaaa-dns-record</a>
-  <a href="https://page.engineer/blog/which-dns-record-should-you-use-a-complete-guide-to-dns-record-types" style="display: block;">https://page.engineer/blog/which-dns-record-should-you-use-a-complete-guide-to-dns-record-types</a>
-</div>
 
       </div>
     </section>
