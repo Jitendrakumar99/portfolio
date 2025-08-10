@@ -12,6 +12,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
+  title: "Page Engineer",
+  description:
+    "A modern blog website sharing articles on technology, gadgets, programming, and education. Designed for a smooth reading experience and optimized for search engines.",
+  images: ["Blog.png", "Top50.png", "Aitest.png", "Gameo.png"],
+  technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "MongoDB"],
+  githubLink: "https://github.com/Jitendrakumar99/",
+  liveLink: "https://page.engineer/",
+  autoplayDelay: 2500,
+}
+  ,
+  {
     title: "E-commerce Platform",
     description:
       "An e-commerce platform for selling products online. It has a user-friendly interface and is optimized for search engines.",
