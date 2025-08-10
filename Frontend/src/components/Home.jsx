@@ -49,7 +49,7 @@ const Home = () => {
           <a href="https://github.com/Jitendrakumar99" target="_blank" rel="noopener noreferrer">
             <FaGithub className="text-3xl sm:text-4xl hover:text-white transition duration-300" />
           </a>
-          <a href="https://www.linkedin.com/in/jitendra-kumar-530b78260/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jitendrakumar99/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-3xl sm:text-4xl hover:text-blue-500 transition duration-300" />
           </a>
           <a href="https://twitter.com/Jitendra6839" target="_blank" rel="noopener noreferrer">
