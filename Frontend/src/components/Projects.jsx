@@ -18,7 +18,7 @@ const projects = [
   images: ["Blog.png", "Top50.png", "Aitest.png", "Gameo.png"],
   technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "MongoDB"],
   githubLink: "https://github.com/Jitendrakumar99/",
-  liveLink: "https://page.engineer/",
+  liveLink: "https://pageengineer.com/",
   autoplayDelay: 2500,
 }
   ,
