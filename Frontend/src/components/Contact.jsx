@@ -97,10 +97,17 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Info Card */}
+            
             <div 
               ref={el => contactCardsRef.current[0] = el}
               className="bg-blue-400/10 bg-opacity-50 rounded-lg p-4 sm:p-8 shadow-xl transform hover:-translate-y-2 transition-transform duration-300"
             >
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-4">Contact if you have any questions or want to discuss a project.</h3>
+              <div>
+              <div className="text-gray-300 mb-6 sm:mb-12 text-center md:text-left"></div>
+                <p className="text-lg sm:text-xl">I'm open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out using the contact information or the form.</p>
+            </div>
+            <br />
               <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-8">Contact Information</h3>
               <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
