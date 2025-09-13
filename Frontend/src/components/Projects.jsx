@@ -52,6 +52,16 @@ const projects = [
     autoplayDelay: 1500, 
   },
   {
+    title:"API Playground",
+    description:
+      "A web application that allows users to explore and test our various APIs in a user-friendly interface.It is for only live url only not for local host",
+    images: ["play1.png","play2.png","play3.png"],
+    technologies: ["React", "Node.js", "Express", "TailwindCss"],
+    githubLink: "https://github.com/Jitendrakumar99/",
+    liveLink: "https://app.pageengineer.com/",
+    autoplayDelay: 2000,
+  },
+  {
     title: "Whiteboard",
     description:
       "A collaborative whiteboard application for brainstorming and visualizing ideas in real-time.",

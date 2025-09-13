@@ -17,7 +17,6 @@ const About = () => {
         tl.current.kill();
       }
 
-      // Create new timeline with ScrollTrigger
       tl.current = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -25,7 +24,7 @@ const About = () => {
           end: "bottom center",
           toggleActions: "play none none reverse",
         },
-      });
+      }); 
 
       // Add animations to timeline
       tl.current
@@ -87,7 +86,7 @@ const About = () => {
                 <p className="text-gray-300">Location: Andhra Pradesh</p>
               </div>
               <a
-                href="/jitendraresume1.pdf"
+                href="/jitphotoresume.pdf"
                 download="Jitendra_Resume.pdf"
                 className="inline-block px-6 py-2 border border-blue-400 text-blue-400 hover:bg-blue-500 hover:text-white rounded-md transition"
               >

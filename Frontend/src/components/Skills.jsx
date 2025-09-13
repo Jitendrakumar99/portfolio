@@ -3,9 +3,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   FaHtml5, FaCss3Alt, FaJs, FaReact, 
-  FaNode, FaDatabase, FaGit, FaDocker, FaJava 
+  FaNode, FaDatabase, FaGit, FaDocker, FaJava ,FaPython
 } from 'react-icons/fa';
-import { SiCplusplus, SiTailwindcss, SiMongodb } from 'react-icons/si';
+
+import { SiCplusplus, SiTailwindcss, SiMongodb,SiMysql, SiNextdotjs, SiRedux } from 'react-icons/si';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,14 +16,17 @@ const skills = [
   { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', proficiency: 88 },
   { name: 'React', icon: FaReact, color: '#61DAFB', proficiency: 85 },
   { name: 'React Native', icon: FaReact, color: '#61DAFB', proficiency: 80 },
+  { name: 'Next.js', icon: SiNextdotjs, color: '#61DAFB', proficiency: 80 },
+  { name: 'Redux', icon: SiRedux, color: '#61DAFB', proficiency: 80 },
   { name: 'Node.js', icon: FaNode, color: '#339933', proficiency: 80 },
   { name: 'MongoDB', icon: SiMongodb, color: '#47A248', proficiency: 82 },
   { name: 'Mongoose', icon: FaDatabase, color: '#880000', proficiency: 80 },
   { name: 'C++', icon: SiCplusplus, color: '#00599C', proficiency: 85 },
   { name: 'Java', icon: FaJava, color: '#007396', proficiency: 82 },
+  { name: 'Python', icon: FaPython, color: '#3776AB', proficiency: 82 },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38B2AC', proficiency: 50 },
   { name: 'Git', icon: FaGit, color: '#F05032', proficiency: 85 },
-  // { name: 'Docker', icon: FaDocker, color: '#2496ED', proficiency: 30 },
+  { name: 'MySql', icon: SiMysql, color: '#2496ED', proficiency: 70 },
 ];
 
 const Skills = () => {

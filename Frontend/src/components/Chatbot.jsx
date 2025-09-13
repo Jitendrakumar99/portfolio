@@ -1,58 +1,123 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaRobot, FaTimes, FaChevronUp, FaPaperPlane } from 'react-icons/fa';
 
+// Expanded certifications list (from Certifications.jsx summary)
 const certifications = [
-  {
-    title: "React - The Complete Guide",
-    issuer: "Udemy",
-    date: "2023",
-    skills: ["React", "Redux", "React Hooks", "Context API"],
-  },
-  {
-    title: "Full Stack Web Development",
-    issuer: "FreeCodeCamp",
-    date: "2023",
-    skills: ["JavaScript", "Node.js", "MongoDB", "Express"],
-  },
- 
+  { title: "GalileoX", issuer: "Galileo University", date: "2024", skills: ["Python", "Data Science"] },
+  { title: "Red Hat AD141", issuer: "Red Hat", date: "2024", skills: ["Python Automation"] },
+  { title: "Red Hat RH124", issuer: "Red Hat", date: "2024", skills: ["Linux System Administration"] },
+  { title: "Red Hat RH134", issuer: "Red Hat", date: "2024", skills: ["Linux System Administration"] },
+  { title: "HackerRank Java", issuer: "HackerRank", date: "2024", skills: ["Java"] },
+  { title: "CodSoft Internship", issuer: "CodSoft", date: "2024", skills: ["Web Development"] },
+  { title: "CPA Programming", issuer: "C++ Institute", date: "2024", skills: ["C++"] },
+  { title: "C Programming", issuer: "Technical Hub", date: "2024", skills: ["C"] },
+  { title: "IBM SkillsBuild", issuer: "IBM", date: "2024", skills: ["Web Development"] },
+  { title: "Frontend HTML & CSS", issuer: "Great Learning", date: "2024", skills: ["HTML", "CSS"] },
+  { title: "Programming Essentials", issuer: "Technical Hub", date: "2024", skills: ["Programming"] },
+  { title: "JavaScript Basic", issuer: "HackerRank", date: "2024", skills: ["JavaScript"] },
+  { title: "Python Certification", issuer: "Technical Hub", date: "2024", skills: ["Python"] }
 ];
+
+// Expanded projects list (from Projects.jsx summary)
 const projects = [
   {
+    title: "Page Engineer (Blog Website)",
+    description: "A modern blog platform for engineers to share articles and tutorials.",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
+    githubLink: "https://github.com/Jitendrakumar99/",
+    liveLink: "https://pageengineer.com"
+  },
+  {
     title: "E-commerce Platform",
-    // description:
-    //   "An e-commerce platform for selling products online. It has a user-friendly interface and is optimized for search engines.",
-    images: ["home.png", "pic1.png", "pic2.png","pic3.png"],
-    technologies: ["React", "Node.js", "MongoDB", "Express", "TailwindCss"],
+    description: "A full-featured e-commerce site with product management and secure authentication.",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
     githubLink: "https://github.com/Jitendrakumar99/E-commerce",
-    liveLink: "https://project1.com",
+    liveLink: "https://e-commerce-b8pf.vercel.app/"
+  },
+  {
+    title: "Blood Donation Website",
+    description: "A responsive platform to connect blood donors and recipients.",
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Bootstrap", "AWS"],
+    githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
+    liveLink: "http://adityauniversity.in/blooddonation"
+  },
+  {
+    title: "API Playground",
+    description: "A playground for testing and learning about APIs.",
+    technologies: ["React", "Node.js"],
+    githubLink: "https://github.com/Jitendrakumar99/",
+    liveLink: "https://app.pageengineer.com/"
+  },
+  {
+    title: "Whiteboard",
+    description: "A collaborative online whiteboard for drawing and brainstorming.",
+    technologies: ["React", "Socket.io"],
+    githubLink: "https://github.com/Jitendrakumar99",
+    liveLink: "https://jitendradev.tech/"
+  },
+  {
+    title: "CourseHub Learning Website",
+    description: "A platform for online courses and learning resources.",
+    technologies: ["React", "Node.js", "MongoDB"],
+    githubLink: "https://github.com/Jitendrakumar99",
+    liveLink: "https://github.com/Jitendrakumar99"
   },
   {
     title: "Netflix Clone",
-    // description:
-    //   "A clone of the popular streaming service Netflix. It has a user-friendly interface and is optimized for search engines.",
-    images: ["netflix.png","net1.png"],
+    description: "A clone of Netflix with streaming UI and authentication.",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
     githubLink: "https://github.com/Jitendrakumar99/Netflix",
-    liveLink: "https://jitendrakumar99.github.io/Netflix/",
+    liveLink: "https://jitendrakumar99.github.io/Netflix/"
+  }
+];
+
+// Expanded skills (from Skills.jsx)
+const skills = [
+  { name: 'HTML5', proficiency: 90 },
+  { name: 'CSS3', proficiency: 85 },
+  { name: 'JavaScript', proficiency: 88 },
+  { name: 'React', proficiency: 85 },
+  { name: 'React Native', proficiency: 80 },
+  { name: 'Node.js', proficiency: 80 },
+  { name: 'MongoDB', proficiency: 82 },
+  { name: 'Mongoose', proficiency: 80 },
+  { name: 'C++', proficiency: 85 },
+  { name: 'Java', proficiency: 82 },
+  { name: 'Tailwind CSS', proficiency: 50 },
+  { name: 'Git', proficiency: 85 },
+   {name:'Sql',proficiency:70}
+];
+
+// Experience (from Experience.jsx)
+const experiences = [
+  {
+    title: "Blood Donation website",
+    company: "Technical Hub",
+    period: "2025 - 2026",
+    description: [
+      "Developed a responsive Blood Donation website using React and Bootstrap with full validation.",
+      "Implemented Framer Motion animations for smooth user interaction and dynamic form appearance.",
+      "Integrated a backend to securely store and manage donor details for efficient record-keeping."
+    ]
   },
   {
-    title: "Blood Donation",
-    // description:
-    //   "A responsive Blood Donation website with secure donor registration, real-time database, smooth animations, and a user-friendly UI to connect donors with those in need.",
-    images: ["image.png","blood.png"],
-    technologies: [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Express",
-      "TailwindCss",
-      "Bootstrap",
-      "AWS",
-    ],
-    githubLink: "https://github.com/Jitendrakumar99/Blooddonation",
-    liveLink: "http://adityauniversity.in:7006/blooddonation",
-  },
+    title: "C Intern",
+    company: "Technical Hub",
+    period: "2025-2026",
+    description: [
+      "Assisted students in understanding C programming concepts, including data structures and algorithms.",
+      "Provided guidance on debugging and optimizing code for efficiency.",
+      "Supported learners in solving programming challenges and enhancing problem-solving skills."
+    ]
+  }
 ];
+
+// About (from About.jsx)
+const aboutMe = `👋 Hi! I'm Jitendra Kumar, a passionate Full Stack Developer based in Andhra Pradesh.
+- 1+ year of web development experience.
+- B.Tech in Computer Science from Aditya College of Engineering and Technology (2022).
+- I love building modern web apps, collaborating, and learning new technologies.
+- Download my CV from the About section!`;
 
 const personalInfo = {
   name: "Jitendra Kumar",
@@ -169,130 +234,81 @@ const Chatbot = () => {
     setInputMessage('');
   };
 
-  const formatSkillCategory = (category, skills) => {
-    return `${category}:
-${skills.map(skill => `• ${skill.name} (${skill.proficiency}%)`).join('\n')}`;
-  };
-
   const getBotResponse = (input) => {
+    // About
+    if (input.includes('about') || input.includes('yourself') || input.includes('bio')) {
+      return aboutMe;
+    }
+
     // Name and basic info
-    if (input.includes('name') || input.includes('who')) {
+    if (input.includes('name') || input.includes('who are you')) {
       return `Hi! I'm ${personalInfo.name}, a ${personalInfo.role} based in ${personalInfo.location}.`;
     }
 
-    // Detailed skills query
-    if (input.includes('skill') || input.includes('tech') || input.includes('technologies')) {
-      if (input.includes('front') || input.includes('ui')) {
-        return formatSkillCategory('Frontend Skills', personalInfo.skills.frontend);
-      }
-      if (input.includes('back') || input.includes('server')) {
-        return formatSkillCategory('Backend Skills', personalInfo.skills.backend);
-      }
-      if (input.includes('tool')) {
-        return formatSkillCategory('Development Tools', personalInfo.skills.tools);
-      }
-      if (input.includes('other') || input.includes('soft')) {
-        return formatSkillCategory('Other Skills', personalInfo.skills.other);
-      }
-      
-      // Show all skills if no specific category is mentioned
-      return `My Skills Overview:
-
-${formatSkillCategory('Frontend Development', personalInfo.skills.frontend)}
-
-${formatSkillCategory('Backend Development', personalInfo.skills.backend)}
-
-${formatSkillCategory('Development Tools', personalInfo.skills.tools)}
-
-${formatSkillCategory('Other Skills', personalInfo.skills.other)}`;
-    }
-
     // Hobbies
-    if (input.includes('hobby') || input.includes('hobbies') || input.includes('interests')) {
-      return `Here are my hobbies:
-${personalInfo.hobbies.map(hobby => `• ${hobby}`).join('\n')}`;
+    if (input.includes('hobby') || input.includes('hobbies') || input.includes('do for fun')) {
+      return `My hobbies:\n${personalInfo.hobbies.map(h => `• ${h}`).join('\n')}`;
     }
 
-    // Short-term goals
-    if (input.includes('short term') || input.includes('short-term')) {
-      return `My short-term goals are:
-${personalInfo.goals.shortTerm.map(goal => `🎯 ${goal}`).join('\n')}`;
-    }
-
-    // Long-term goals
-    if (input.includes('long term') || input.includes('long-term')) {
-      return `My long-term goals are:
-${personalInfo.goals.longTerm.map(goal => `🎯 ${goal}`).join('\n')}`;
+    // Goals
+    if (input.includes('goal') || input.includes('aim') || input.includes('objective')) {
+      return `My short-term goals:\n${personalInfo.goals.shortTerm.map(g => `• ${g}`).join('\n')}
+\nMy long-term goals:\n${personalInfo.goals.longTerm.map(g => `• ${g}`).join('\n')}`;
     }
 
     // Future plans
-    if (input.includes('future') || input.includes('plan')) {
-      return `Here are my future plans:
-${personalInfo.futurePlans.map(plan => `🚀 ${plan}`).join('\n')}`;
+    if (input.includes('future plan') || input.includes('future')) {
+      return `My future plans:\n${personalInfo.futurePlans.map(f => `• ${f}`).join('\n')}`;
     }
 
     // Strengths
-    if (input.includes('strength') || input.includes('good at')) {
-      return `My strengths include:
-${personalInfo.strengths.map(strength => `💪 ${strength}`).join('\n')}`;
+    if (input.includes('strength')) {
+      return `My strengths:\n${personalInfo.strengths.map(s => `• ${s}`).join('\n')}`;
     }
 
     // Weaknesses
-    if (input.includes('weakness') || input.includes('improve')) {
-      return `Areas I'm working on improving:
-${personalInfo.weaknesses.map(weakness => `📈 ${weakness}`).join('\n')}`;
+    if (input.includes('weakness')) {
+      return `My weaknesses:\n${personalInfo.weaknesses.map(w => `• ${w}`).join('\n')}`;
+    }
+
+    // Skills
+    if (input.includes('skill') || input.includes('technology') || input.includes('tech stack')) {
+      return `Here are my main skills:\n${skills.map(s => `• ${s.name} (${s.proficiency}%)`).join('\n')}`;
+    }
+
+    // Projects
+    if (input.includes('project')) {
+      return `Here are my main projects:\n${projects.map(
+        p => `• ${p.title}: ${p.description}\n  Tech: ${p.technologies.join(', ')}\n  [GitHub](${p.githubLink}) | [Live](${p.liveLink})`
+      ).join('\n\n')}`;
+    }
+
+    // Certifications
+    if (input.includes('certificate') || input.includes('certification')) {
+      return `I have earned ${certifications.length}+ certificates, including:\n${certifications.map(
+        c => `• ${c.title} (${c.date}) from ${c.issuer}`
+      ).join('\n')}`;
+    }
+
+    // Experience
+    if (input.includes('experience') || input.includes('work')) {
+      return `Here is my experience:\n${experiences.map(
+        exp => `• ${exp.title} at ${exp.company} (${exp.period})\n  ${exp.description.join('\n  ')}`
+      ).join('\n\n')}`;
     }
 
     // Education
     if (input.includes('education') || input.includes('study') || input.includes('degree')) {
-      return `🎓 Education Background:
-• Degree: ${personalInfo.education.degree}
-• Major: ${personalInfo.education.major}
-• University: ${personalInfo.education.university}
-• Year: ${personalInfo.education.year}
-
-Achievements:
-${personalInfo.education.achievements.map(achievement => `🏆 ${achievement}`).join('\n')}`;
+      return `🎓 Education:\n• ${personalInfo.education.degree} in ${personalInfo.education.major}\n• ${personalInfo.education.university} (${personalInfo.education.year})\nAchievements:\n${personalInfo.education.achievements.map(a => `• ${a}`).join('\n')}`;
     }
 
-    //project
-    if (input.includes('project') || input.includes('liveproject')) {
-      return `Here are my Project:
-${projects.map(cert => `📜 ${cert.title} (${cert.technologies})  ${cert.liveLink}`).join('\n')}`;
+    // Help
+    if (input.includes('help') || input.includes('what can you do')) {
+      return `You can ask me about:\n• About Me / Bio\n• Skills / Tech Stack\n• Projects\n• Certifications\n• Experience\n• Education\n• Hobbies\n• Goals\n• Strengths\n• Weaknesses\nType your question or try: "Tell me about your skills", "List your projects", "Show certificates", "What is your experience?", "What are your hobbies?", etc.`;
     }
 
-    // Certification related queries
-    if (input.includes('certification') || input.includes('certificate')) {
-      return `Here are my certifications:
-${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issuer}`).join('\n')}`;
-    }
-
-    // Specific certification queries
-    const specificCert = certifications.find(cert => 
-      input.toLowerCase().includes(cert.title.toLowerCase())
-    );
-    if (specificCert) {
-      return `About ${specificCert.title}:
-📅 Completed: ${specificCert.date}
-🏢 Issuer: ${specificCert.issuer}
-💡 Skills: ${specificCert.skills.join(', ')}`;
-    }
-
-    // Help message
-    if (input.includes('help') || input.includes('what') || input.includes('how')) {
-      return `You can ask me about:
-• Basic info (name, role)
-• Skills (frontend, backend, tools, other)
-• Hobbies and interests
-• Short-term and long-term goals
-• Future plans
-• Strengths and weaknesses
-• Education background
-• Certifications`;
-    }
-
-    // Default response
-    return "Feel free to ask about my skills, hobbies, goals, education, strengths, or type 'help' to see all options!";
+    // Default
+    return "I'm your portfolio assistant! Ask me about my projects, skills, certificates, experience, education, hobbies, goals, strengths, or weaknesses. Type 'help' for options.";
   };
 
   return (
@@ -300,7 +316,7 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-400/20   hover:bg-primary/90 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+          className="bg-blue-400/20 hover:bg-primary/90 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
         >
           <FaRobot className="text-2xl" />
         </button>
@@ -345,7 +361,7 @@ ${certifications.map(cert => `📜 ${cert.title} (${cert.date}) from ${cert.issu
                           ? 'bg-blue-950 text-white'
                           : 'bg-blue-400/10 bg-opacity-50 text-white'
                       }`}
-                      style={{ whiteSpace: 'pre-line',wordBreak: 'break-word'}}
+                      style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}
                     >
                       {message.text}
                     </div>

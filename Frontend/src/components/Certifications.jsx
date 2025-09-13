@@ -7,9 +7,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const certifications = [
   {
-    title: "GalileoX Progra001 Certificate | edX",
-    issuer: "GalileoX edx",
-    date: "24 April2024",
+    title: "Full stack Web Development with React Native",
+    issuer: "Technical Hub",
+    date: "17th June 2024 to 28th June 2025",
+    credentialLink: "./certificate/Full Stack Development with React Native-1.png",
+    skills: ["React", "React Native", "Node.js", "Express", "MongoDB", "Redux"],
+    badgeUrl:"Technicalhub.io"
+  },
+  {
+    title: "GalileoX Programming Certificate | edX",
+    issuer: "GalileoX edX",
+    date: "24 April 2024",
     credentialLink: "./certificate/GalileoX.png",
     skills: ["Java Programming Fundamentals"],
     badgeUrl: "https://udemy-certificate.s3.amazonaws.com/image/your-badge.png"
