@@ -125,7 +125,7 @@ const Projects = () => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: "top bottom=10",
             end: "top center",
             toggleActions: "play none none reverse",
           },
@@ -225,6 +225,7 @@ const Projects = () => {
               </div>
             </div>
           ))}
+          
         </div>
         {showComingSoon && (
   <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -313,6 +314,7 @@ const Projects = () => {
     </div>
   </div>
 )}
+
 
       </div>
     </section>

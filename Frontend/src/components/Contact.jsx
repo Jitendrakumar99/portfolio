@@ -203,6 +203,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div class="badge-base hidden LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="jitendrakumar99" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/jitendrakumar99?trk=profile-badge">Jitendra Kumar</a></div>
+              
     </section>
   );
 };

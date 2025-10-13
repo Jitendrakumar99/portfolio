@@ -20,7 +20,7 @@ const About = () => {
       tl.current = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center+=100",
+          start: "top center=50",
           end: "bottom center",
           toggleActions: "play none none reverse",
         },
