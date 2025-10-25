@@ -68,7 +68,7 @@ const projects = [
     images: ["Screenshot 2025-03-29 110006.png","Screenshot 2025-03-29 105922.png","Screenshot 2025-03-29 105940.png"],
     technologies: ["React", "Next.js", "Node.js", "MongoDB"],
     githubLink: "https://github.com/Jitendrakumar99",
-    liveLink: "https://jitendradev.tech/",
+    liveLink: "https://white-board-ntip8kztr-jitendrakumar99s-projects.vercel.app/",
     autoplayDelay: 2000,
   },
   {

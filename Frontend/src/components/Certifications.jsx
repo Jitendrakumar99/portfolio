@@ -143,7 +143,7 @@ const Certifications = () => {
             start: "top bottom-=100",
             end: "top center",
             toggleActions: "play none none reverse",
-            markers: true
+            // markers: true
           },
           y: 50,
           opacity: 0,
