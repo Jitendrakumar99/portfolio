@@ -53,7 +53,7 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('https://portfolio-q23z.onrender.com/api/contact', {
+      const response = await fetch('https://portfolio-xh9e-ruby.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
