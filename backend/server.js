@@ -30,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
             to: process.env.EMAIL, 
             subject: subject,
             html: `
-                <h3>New Contact Form Submission</h3>
+                <h3>Portfolio Contact Form Submission</h3>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Sender's Email:</strong> ${email}</p>
                 <p><strong>Message:</strong> ${message}</p>
