@@ -17,7 +17,9 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASSWORD
     }
 });
-
+app.use('/check', (req, res) => {
+    res.send('API is working properly');
+});
 app.post('/api/contact', async (req, res) => {
     const { name, email,subject, message } = req.body;
 
